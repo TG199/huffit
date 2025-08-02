@@ -20,6 +20,7 @@ This project is currently a work in progress. Features are being actively implem
 - [x] Write compressed data along with necessary metadata.
 - [x] Decode compressed files back into original text.
 - [x] Support CLI flags: `--compress`, `--decompress`.
+- [ ] Fix bugs
 
 ## 📦 Usage (Coming Soon)
 
