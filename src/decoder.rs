@@ -29,6 +29,7 @@ pub fn decode(input_file: String, output_file: String) -> Result<(), Box<dyn Err
         if let Some((char_str, bits)) = line.split_once(':') {
             let key = match char_str {
                 "NEWLINE" => '\n',
+                "SPACE"   => ' ',
                 _ => char_str.chars().next().unwrap(),
             };
             huffman_map.insert(bits.to_string(), key);
@@ -39,8 +40,8 @@ pub fn decode(input_file: String, output_file: String) -> Result<(), Box<dyn Err
     for byte in encoded_bytes {
         bit_string.push_str(&format!("{:08b}", byte));
     }
+ 
     bit_string.truncate(bit_length);
-
 
     let mut temp = String::new();
     let mut decoded = String::new();
@@ -50,10 +51,13 @@ pub fn decode(input_file: String, output_file: String) -> Result<(), Box<dyn Err
         if let Some(&ch) = huffman_map.get(&temp) {
             decoded.push(ch);
             temp.clear();
-        } else {
-            return Err("Failed to decode only bits".into());
         }
     }
+
+    /*if !temp.is_empty() {
+        return Err("Leftover bits after processing".into());
+    }
+    */
 
 
     fs::write(output_file, decoded)?;
