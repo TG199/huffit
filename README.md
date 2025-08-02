@@ -15,11 +15,11 @@ This project is currently a work in progress. Features are being actively implem
 ## 🚀 Planned Features
 
 - [x] Read text files and compute character frequencies.
-- [ ] Build and serialize the Huffman tree.
-- [ ] Encode text using a prefix-free Huffman code table.
-- [ ] Write compressed data along with necessary metadata.
-- [ ] Decode compressed files back into original text.
-- [ ] Support CLI flags: `--compress`, `--decompress`, `--input`, `--output`.
+- [x] Build and serialize the Huffman tree.
+- [x] Encode text using a prefix-free Huffman code table.
+- [x] Write compressed data along with necessary metadata.
+- [x] Decode compressed files back into original text.
+- [x] Support CLI flags: `--compress`, `--decompress`.
 
 ## 📦 Usage (Coming Soon)
 
@@ -27,10 +27,10 @@ Once implemented, usage will look like:
 
 ```bash
 # Compress a file
-huff compress --input les_miserables.txt --output les_miserables.huff
+huff compress test.txt
 
 # Decompress it
-huff decompress --input les_miserables.huff --output restored.txt
+huff decompress compressed.huff
 
 🛠️ Development
 Clone the repo and build:
