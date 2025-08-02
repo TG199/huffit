@@ -21,14 +21,14 @@ fn main() -> Result <(), Box<dyn Error>> {
 
     match commands[1].as_str() {
 
-        "encode" => {
+        "--compress" => {
             if let Err(e) = encoder::encode(input_file.to_string(), output_file.to_string()) {
                 eprintln!("Encoding error: {e}");
                 exit(1);
             }
         },
 
-        "decode" => {
+        "--decompress" => {
             if let Err(e) = decoder::decode(input_file.to_string(), output_file.to_string()) {
                 eprintln!("Decoding error: {e}");
                 exit(1);
