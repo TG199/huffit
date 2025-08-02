@@ -1,3 +1,0 @@
-hello my name is kelechi Ebiri
-I'm a software engineer
-I'm currently learning rust
